@@ -1,5 +1,5 @@
 import "dotenv/config";
-import express from "express";
+import express, { Application } from "express";
 import cors from "cors";
 import routes from "./routes";
 import { sendError, sendSuccess } from "./utils/response";
@@ -12,7 +12,7 @@ import { Server } from "socket.io";
 import { initChatSockets } from "./utils/chat";
 import { prisma } from "./utils/prisma";
 
-const app = express();
+const app: Application = express();
 
 // Middlewares
 app.use(express.json({ limit: "50mb" }));
@@ -107,7 +107,7 @@ if (require.main === module) {
       console.log("Connected to the database");
       await connectRedis();
 
-      const PORT = process.env.PORT || 4000;
+      const PORT = Number(process.env.PORT) || 4000;
       const httpServer = createServer(app);
       
       const io = new Server(httpServer, {
