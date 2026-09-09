@@ -36,7 +36,6 @@ app.use(
 // Health check
 app.get("/api/health", async (req, res) => {
   try {
-    // In serverless, we might need to ensure connection if it's the first time
     await prisma.$connect();
     await prisma.user.findFirst({ take: 1 });
 

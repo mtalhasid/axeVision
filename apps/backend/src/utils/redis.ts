@@ -8,6 +8,5 @@ export const redisClient = new Redis({
 });
 
 export const connectRedis = async () => {
-  // Upstash Redis uses REST API so it is connectionless
   console.log('Upstash Redis ready');
 };

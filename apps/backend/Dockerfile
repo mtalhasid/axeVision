@@ -3,7 +3,6 @@ FROM node:20-alpine
 WORKDIR /app
 RUN corepack enable && corepack prepare pnpm@10.4.1 --activate
 COPY . .
-# pnpm default store under /root can hit EROFS during Docker Desktop/BuildKit builds; /tmp is reliably writable
 RUN mkdir -p /tmp/pnpm-store \
   && printf "store-dir=/tmp/pnpm-store\n" >> /root/.npmrc \
   && pnpm install --frozen-lockfile

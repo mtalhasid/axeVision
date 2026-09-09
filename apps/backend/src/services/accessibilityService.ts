@@ -3,6 +3,7 @@ import puppeteer from "puppeteer";
 import { AxePuppeteer } from "@axe-core/puppeteer";
 
 export class AccessibilityService {
+  //PROCESSING - FORMATTING to the Projects DTO format
   static async analyzeHtml(html: string): Promise<AccessibilityIssueDTO[]> {
     try {
       console.log("Starting axe-core accessibility analysis...");
@@ -62,7 +63,7 @@ export class AccessibilityService {
     }
   }
 
-  //Run axe-core analysis on HTML string using Puppeteer
+  //ACTUAL ANALYSIS - Run axe-core analysis on HTML string using Puppeteer
   private static async runAxeOnHtml(html: string): Promise<any> {
     let browser;
     try {

@@ -2,7 +2,7 @@
 
 # axeVision
 
-**AI-powered web accessibility analysis. Catch WCAG violations before they ship.**
+**Web accessibility analysis. Catch WCAG violations before they ship.**
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Platform-4F46E5?style=for-the-badge)](https://axe-vision-platform.vercel.app)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Full_Stack-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
@@ -25,6 +25,9 @@ The loop: **capture in the browser → analyze on the backend → fix with AI �
 ---
 
 ## Architecture
+
+![axeVision System Design](./docs/system-design.png)
+*User requests flow through the Chrome Extension or React dashboard → Auth Middleware → service layer (Snapshot, Accessibility, AI, Chat) → MongoDB, Redis, Gemini AI, and Socket.io.*
 
 axeVision is a **Turborepo monorepo** with four packages sharing TypeScript configs across the stack.
 

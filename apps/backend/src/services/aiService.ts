@@ -216,22 +216,22 @@ ${formattedIssues}
 
 Write a structured report using these exact markdown section headings in order:
 
-## 🔴 Critical & High Priority Fixes
+## Critical & High Priority Fixes
 For each critical/high issue: state the WCAG criterion, explain who is affected, and give a concrete 1-2 sentence fix.
 
-## 🟡 Medium Priority Fixes
+## Medium Priority Fixes
 For each medium issue: same format — WCAG criterion, user impact, concrete fix.
 
-## 🟢 Low Priority & Best Practices
+## Low Priority & Best Practices
 Any low-severity issues or proactive improvements.
 
-## 🛠️ Quick Wins
+## Quick Wins
 List the 2-3 fastest fixes a developer can apply in under 5 minutes.
 
-## ✅ How to Test
+## How to Test
 List 3-5 specific testing steps for the issues above (e.g. axe DevTools, NVDA + Chrome, keyboard-only navigation, colour contrast checker).
 
-## 📚 Resources
+## Resources
 Provide 3-5 relevant links to MDN, WCAG docs, or accessibility tools.
 
 Formatting rules:
