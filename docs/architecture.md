@@ -50,7 +50,7 @@ axeVision is built as a Turborepo monorepo with four packages. Each package owns
 
 ## Package Responsibilities
 
-### Chrome Extension (`packages/extension`)
+### Chrome Extension (`apps/extension`)
 
 The extension is the data entry point for the system. It operates entirely independently from the web platform session — it has its own login form in the popup and stores its JWT in `chrome.storage.local`.
 
@@ -64,7 +64,7 @@ The extension also runs lightweight regex-based checks locally for immediate fee
 
 ---
 
-### Backend (`packages/backend`)
+### Backend (`apps/backend`)
 
 The backend runs on a single Node.js/Express server. Socket.io is mounted on the same server and the same port.
 

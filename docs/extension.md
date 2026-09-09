@@ -19,7 +19,7 @@ The extension is not published on the Chrome Web Store. It is loaded manually as
 2. Open Chrome and navigate to chrome://extensions/
 3. Enable Developer Mode using the toggle in the top right
 4. Click "Load unpacked"
-5. Select the packages/extension folder
+5. Select the apps/extension folder
 6. The axeVision icon will appear in your toolbar
 ```
 
@@ -136,7 +136,7 @@ All API calls from the extension include `Authorization: Bearer <token>` assembl
 ## Structure
 
 ```
-packages/extension/
+apps/extension/
 ├── manifest.json              # MV3 extension config
 ├── popup.html                 # Main popup entry point
 ├── auth.html                  # Separate auth window

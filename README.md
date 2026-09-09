@@ -34,11 +34,14 @@ axeVision is a **Turborepo monorepo** with four packages sharing TypeScript conf
 ```
 axeVision/
 ├── apps/
-│   └── platform/          # React dashboard (Vite + Tailwind)
-├── packages/
 │   ├── backend/           # Node.js/Express API
 │   ├── extension/         # Chrome Extension (Manifest V3)
-│   └── shared/            # Shared TypeScript configs
+│   └── platform/          # React dashboard (Vite + Tailwind)
+├── packages/
+│   ├── eslint-config/     # Shared ESLint configuration
+│   ├── shared/            # Shared utilities
+│   ├── types/             # Shared TypeScript types
+│   └── typescript-config/ # Shared TypeScript configs
 ├── docker-compose.yml
 ├── turbo.json
 └── .github/workflows/     # CI/CD pipelines
@@ -49,7 +52,7 @@ axeVision/
 | **Extension** | Parses DOM into structured JSON, runs basic regex checks locally, sends snapshot to backend |
 | **Backend** | Runs full axe-core analysis via Puppeteer, orchestrates Gemini AI, manages data and real-time events |
 | **Platform** | Team dashboard for analytics, AI co-pilot, org chat, RBAC management, and snapshot history |
-| **Shared** | TypeScript configs shared across all packages |
+| **Shared** | TypeScript types and configs shared across all packages |
 
 ---
 
@@ -111,7 +114,7 @@ cd axeVision
 
 pnpm install
 
-cp packages/backend/.env.example packages/backend/.env
+cp apps/backend/.env.example apps/backend/.env
 cp apps/platform/.env.example apps/platform/.env
 ```
 

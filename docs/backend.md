@@ -25,7 +25,7 @@ The backend is a Node.js/Express API server. Socket.io is mounted on the same HT
 ## Project Structure
 
 ```
-packages/backend/src/
+apps/backend/src/
 ├── controllers/       # Request handlers, one per resource
 ├── routes/            # Route definitions with middleware applied
 ├── models/            # Mongoose schemas
@@ -191,7 +191,7 @@ Rate limiting is applied on auth and analysis routes to prevent abuse.
 
 ## Environment Variables
 
-Create a `.env` file in `packages/backend/` with the following:
+Create a `.env` file in `apps/backend/` with the following:
 
 ```env
 # Server
@@ -221,7 +221,7 @@ Three separate Gemini keys are used to distribute load across the chatbot, recom
 ## Running Locally
 
 ```bash
-cd packages/backend
+cd apps/backend
 pnpm dev
 ```
 
@@ -234,8 +234,8 @@ API runs on `http://localhost:4000`. Health check available at `http://localhost
 A `Dockerfile` exists in `packages/backend/`. To build and run the container directly:
 
 ```bash
-docker build -t axevision-backend -f packages/backend/Dockerfile .
-docker run -p 4000:4000 --env-file packages/backend/.env axevision-backend
+docker build -t axevision-backend -f apps/backend/Dockerfile .
+docker run -p 4000:4000 --env-file apps/backend/.env axevision-backend
 ```
 
 To run the full stack locally with Docker Compose from the repo root:
@@ -254,4 +254,4 @@ The backend is deployed to Fly.io via Docker through the GitHub Actions CI/CD pi
 2. Pushes the image to Docker Hub
 3. Fly.io pulls the latest image and redeploys
 
-Fly configuration lives in `fly.toml` at the repo root. The server implements graceful shutdown on `SIGTERM` and `SIGINT`, closing open connections and disconnecting from MongoDB before exiting. A 10 second timeout forces exit if shutdown stalls.
+The server implements graceful shutdown on `SIGTERM` and `SIGINT`, closing open connections and disconnecting from MongoDB before exiting. A 10 second timeout forces exit if shutdown stalls.
